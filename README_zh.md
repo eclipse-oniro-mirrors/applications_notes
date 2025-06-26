@@ -136,6 +136,14 @@ hilog | grep 过滤信息
 hilog | grep Label
 ```
 
+## 5.约束与限制
+
+1.本示例仅支持标准系统上运行,支持设备RK3568。
+
+2.本示例已适配API14版本SDK,SDK版本号(API Version 14 5.0.2),镜像版本号(5.0.2)。
+
+3.本示例需要使用DevEco Studio 5.0.2 Release版本才可编译运行。
+
 ## 相关仓
 
 系统应用
