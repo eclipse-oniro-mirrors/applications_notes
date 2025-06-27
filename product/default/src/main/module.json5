@@ -18,7 +18,7 @@
   "module": {
     "name": "default",
     "type": "entry",
-    "srcEntrance": "./ets/Application/AbilityStage.ts",
+    "srcEntry": "./ets/Application/AbilityStage.ts",
     "description": "$string:entry_MainAbility",
     "mainElement": "MainAbility",
     "deviceTypes": [
@@ -31,22 +31,56 @@
       },
       {
         "name": "ohos.permission.MEDIA_LOCATION",
-        "reason": "$string:media_location_permission"
+        "reason": "$string:media_location_permission",
+        "usedScene": {
+          "abilities": [
+            "MainAbility"
+          ],
+          "when":"inuse"
+        }
       },
       {
         "name": "ohos.permission.DISTRIBUTED_DATASYNC",
-        "reason": "$string:distributed_dataSync_permission"
+        "reason": "$string:distributed_dataSync_permission",
+        "usedScene": {
+          "abilities": [
+            "MainAbility"
+          ],
+          "when":"inuse"
+        }
       },
       {
         "name": "ohos.permission.START_ABILITIES_FROM_BACKGROUND"
       },
       {
         "name": "ohos.permission.READ_IMAGEVIDEO",
-        "reason": "$string:read_image_video_permission"
+        "reason": "$string:read_image_video_permission",
+        "usedScene": {
+          "abilities": [
+            "MainAbility"
+          ],
+          "when":"inuse"
+        }
       },
       {
         "name": "ohos.permission.WRITE_IMAGEVIDEO",
-        "reason": "$string:write_image_video_permission"
+        "reason": "$string:write_image_video_permission",
+        "usedScene": {
+          "abilities": [
+            "MainAbility"
+          ],
+          "when":"inuse"
+        }
+      },
+      {
+        "name": "ohos.permission.KEEP_BACKGROUND_RUNNING",
+        "reason": "$string:keep_background_running_permission",
+        "usedScene": {
+          "abilities": [
+            "MainAbility"
+          ],
+          "when":"always"
+        }
       }
     ],
     "deliveryWithInstall": true,
@@ -62,7 +96,7 @@
     "abilities": [
       {
         "name": "MainAbility",
-        "srcEntrance": "./ets/MainAbility/MainAbility.ts",
+        "srcEntry": "./ets/MainAbility/MainAbility.ts",
         "description": "$string:entry_MainAbility",
         "icon": "$media:note",
         "label": "$string:entry_MainAbility",
@@ -77,6 +111,9 @@
               "action.system.home"
             ]
           }
+        ],
+        "backgroundModes": [
+          "dataTransfer"
         ],
         "startWindowBackground": "$color:color_1",
         "startWindowIcon": "$media:note"

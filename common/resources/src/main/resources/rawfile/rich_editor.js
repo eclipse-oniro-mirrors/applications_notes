@@ -104,7 +104,9 @@ RICH_EDITOR.setNumbers = function () {
   if (listStyle === 'decimal') {
     return;
   }
+  let fontSize = document.queryCommandValue('fontSize');
   document.execCommand('insertOrderedList', false, null);
+  document.execCommand('fontSize', false, fontSize);
   let selection;
   let type;
   if (window.getSelection) {
@@ -135,7 +137,9 @@ RICH_EDITOR.setABC = function () {
   if (listStyle === 'lower-alpha') {
     return;
   }
+  let fontSize = document.queryCommandValue('fontSize');
   document.execCommand('insertOrderedList', false, null);
+  document.execCommand('fontSize', false, fontSize);
   let selection;
   let type;
   if (window.getSelection) {
@@ -166,7 +170,9 @@ RICH_EDITOR.setBullets = function () {
   if (listStyle === 'disc') {
     return;
   }
+  let fontSize = document.queryCommandValue('fontSize');
   document.execCommand('insertUnorderedList', false, null);
+  document.execCommand('fontSize', false, fontSize);
   let selection;
   let type;
   if (window.getSelection) {
@@ -197,7 +203,9 @@ RICH_EDITOR.setSquare = function () {
   if (listStyle === 'square') {
     return;
   }
+  let fontSize = document.queryCommandValue('fontSize');
   document.execCommand('insertUnorderedList', false, null);
+  document.execCommand('fontSize', false, fontSize);
   let selection;
   let type;
   if (window.getSelection) {
