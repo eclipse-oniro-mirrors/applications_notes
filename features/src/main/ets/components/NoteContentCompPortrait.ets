@@ -166,6 +166,9 @@ export struct NoteContentCompPortrait {
 
     callbackScheduledSave: (html) => {
       LogUtil.info(TAG, 'callbackScheduledSave');
+      if(this.isClickBack || !this.selectedNoteData){
+        return;
+      }
       if (this.selectedNoteData?.content_text == html) {
         LogUtil.info(TAG, 'callbackScheduledSave the same value return');
         return;
@@ -432,6 +435,10 @@ export struct NoteContentCompPortrait {
 
   aboutToDisappear(): void {
     this.isClickBack = true
+    if(time_id){
+      clearInterval(time_id);
+      time_id = 0;
+    }
     emitter.off('backToHome');
     NoteUtil.refreshAll();
     LogUtil.info(TAG, 'aboutToDisappear');
